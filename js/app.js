@@ -106,13 +106,15 @@ async function activateXR() {
       const action = mixer.clipAction(animation);
       action.play();
 
-      scene.add(customModel);
-      if (customModel.length > MAX_FLOWERS) {
+      if (customModel.length > 1) {
        
         let oldFlower = customModel.shift();
         
         scene.remove(oldFlower);
       }
+
+      scene.add(customModel);
+      
     });
   });
 
