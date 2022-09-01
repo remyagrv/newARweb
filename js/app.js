@@ -82,15 +82,15 @@ async function activateXR() {
   );
 
   let customModel;
-  let clone;
-  if(clone){
-    clone.visible = false;
-  }
+  let count=0;
   // Eventlistener that will wait for a 'tap' of the user. When tapped, custom model loads with animation and get placed on marker location
   session.addEventListener("select", () => {
+    if(count>1){
+      customModel.visible=false;
+    }
     loader.load("models/Demon/Demon.gltf", function (gltf) {
       customModel = gltf.scene;
-      clone = customModel;
+      
       // Scale of model
       customModel.scale.multiplyScalar(8);
 
@@ -109,6 +109,8 @@ async function activateXR() {
       action.play();
 
       scene.add(customModel);
+      count++;
+
       
     });
   });
