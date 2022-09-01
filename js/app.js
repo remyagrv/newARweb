@@ -12,7 +12,7 @@ async function activateXR() {
 
   // Add a mixer for animation frames later
   const mixers = [];
-
+ 
   // Camera from phone
   const camera = new THREE.PerspectiveCamera();
 
@@ -92,6 +92,9 @@ async function activateXR() {
 
       // Copy position marker. Use it for position custom model
       customModel.position.copy(marker.position);
+      // remove old model
+      let oldFlower = customModel.shift();   
+      scene.removeNode(oldFlower);
 
       // Add rotation to model.
       customModel.rotation.y += 15;
