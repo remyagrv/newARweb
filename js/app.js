@@ -12,7 +12,6 @@ async function activateXR() {
 
   // Add a mixer for animation frames later
   const mixers = [];
-  const MAX_FLOWERS = 1;
 
   // Camera from phone
   const camera = new THREE.PerspectiveCamera();
@@ -87,31 +86,6 @@ async function activateXR() {
   session.addEventListener("select", () => {
     loader.load("models/Demon/Demon.gltf", function (gltf) {
       customModel = gltf.scene;
-     
-
-      // let flower;
-// loader.load("models/Demon/Demon.gltf", function(gltf) {
-//   customModel = gltf.scene;
-// });
-
-// session.addEventListener("select", (event) => {
-//   if (customModel) {
-//     const clone = customModel.clone();
-//     clone.scale.multiplyScalar(8);
-//     clone.position.copy(marker.position);
-    
-//      //if model is animated. play animation
-//      const animation = gltf.animations[0];
-//      const mixer = new THREE.AnimationMixer(clone);
-//      mixers.push(mixer);
-
-//      const action = mixer.clipAction(animation);
-//      action.play();
-
-    
-//     scene.add(clone);
-//   }
-// });
 
       // Scale of model
       customModel.scale.multiplyScalar(8);
@@ -120,7 +94,7 @@ async function activateXR() {
       customModel.position.copy(marker.position);
 
       // Add rotation to model.
-      customModel.scale.multiplyScalar(8);
+      customModel.rotation.y += 15;
 
       //if model is animated. play animation
       const animation = gltf.animations[0];
