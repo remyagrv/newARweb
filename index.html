@@ -67,8 +67,8 @@ CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
       arObject.visible = false;
       scene.addNode(arObject);
 
-      let title = new Gltf2Node({url: 'media/gltf/text/text.gltf'});
-      arObject.addNode(title);
+      // let title = new Gltf2Node({url: 'media/gltf/text/text.gltf'});
+      // arObject.addNode(title);
 
       let flower = new Gltf2Node({url: 'media/gltf/sunflower/sunflower.gltf'});
       arObject.addNode(flower);
@@ -168,11 +168,11 @@ CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
         newFlower.visible = true;
         newFlower.matrix = matrix;
 
-        title.visible = true;
-        title.matrix = matrix;
+        // title.visible = true;
+        // title.matrix = matrix;
         
         scene.addNode(newFlower);
-        scene.addNode(title);
+        // scene.addNode(title);
         
         flowers.push(newFlower);
 
