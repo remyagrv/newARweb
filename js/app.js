@@ -91,7 +91,7 @@ async function activateXR() {
        
         let oldFlower = customModel.shift();
         
-        scene.removeNode(oldFlower);
+        scene.remove(oldFlower);
       }
 
       // Scale of model
