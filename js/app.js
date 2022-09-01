@@ -84,55 +84,55 @@ async function activateXR() {
 
   let customModel;
   // Eventlistener that will wait for a 'tap' of the user. When tapped, custom model loads with animation and get placed on marker location
-  // session.addEventListener("select", () => {
-  //   loader.load("models/Demon/Demon.gltf", function (gltf) {
-  //     customModel = gltf.scene;
+  session.addEventListener("select", () => {
+    loader.load("models/Demon/Demon.gltf", function (gltf) {
+      customModel = gltf.scene;
      
 
       // let flower;
-loader.load("models/Demon/Demon.gltf", function(gltf) {
-  customModel = gltf.scene;
-});
+// loader.load("models/Demon/Demon.gltf", function(gltf) {
+//   customModel = gltf.scene;
+// });
 
-session.addEventListener("select", (event) => {
-  if (customModel) {
-    const clone = customModel.clone();
-    clone.scale.multiplyScalar(8);
-    clone.position.copy(marker.position);
+// session.addEventListener("select", (event) => {
+//   if (customModel) {
+//     const clone = customModel.clone();
+//     clone.scale.multiplyScalar(8);
+//     clone.position.copy(marker.position);
     
-     //if model is animated. play animation
-     const animation = gltf.animations[0];
-     const mixer = new THREE.AnimationMixer(clone);
-     mixers.push(mixer);
+//      //if model is animated. play animation
+//      const animation = gltf.animations[0];
+//      const mixer = new THREE.AnimationMixer(clone);
+//      mixers.push(mixer);
 
-     const action = mixer.clipAction(animation);
-     action.play();
+//      const action = mixer.clipAction(animation);
+//      action.play();
 
     
-    scene.add(clone);
-  }
-});
+//     scene.add(clone);
+//   }
+// });
 
-  //     // Scale of model
-  //     customModel.scale.multiplyScalar(8);
+      // Scale of model
+      customModel.scale.multiplyScalar(8);
 
-  //     // Copy position marker. Use it for position custom model
-  //     customModel.position.copy(marker.position);
+      // Copy position marker. Use it for position custom model
+      customModel.position.copy(marker.position);
 
-  //     // Add rotation to model.
-  //     customModel.scale.multiplyScalar(8);
+      // Add rotation to model.
+      customModel.scale.multiplyScalar(8);
 
-  //     //if model is animated. play animation
-  //     const animation = gltf.animations[0];
-  //     const mixer = new THREE.AnimationMixer(customModel);
-  //     mixers.push(mixer);
+      //if model is animated. play animation
+      const animation = gltf.animations[0];
+      const mixer = new THREE.AnimationMixer(customModel);
+      mixers.push(mixer);
 
-  //     const action = mixer.clipAction(animation);
-  //     action.play();
+      const action = mixer.clipAction(animation);
+      action.play();
 
-  //     scene.add(customModel);
-  //   });
-  // });
+      scene.add(customModel);
+    });
+  });
 
   //----- step 5 -------//
   // Create a render loop that allows us to draw on the AR view.
