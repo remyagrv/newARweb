@@ -84,7 +84,7 @@ async function activateXR() {
   let customModel;
   let clone;
   if(clone){
-    scene.remove(clone);
+    clone.visible = false;
   }
   // Eventlistener that will wait for a 'tap' of the user. When tapped, custom model loads with animation and get placed on marker location
   session.addEventListener("select", () => {
