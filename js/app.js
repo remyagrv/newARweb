@@ -12,7 +12,7 @@ async function activateXR() {
 
   // Add a mixer for animation frames later
   const mixers = [];
-  const MAX_FLOWERS = 1;
+  
 
   // Camera from phone
   const camera = new THREE.PerspectiveCamera();
@@ -87,7 +87,7 @@ async function activateXR() {
   session.addEventListener("select", () => {
     loader.load("models/Demon/Demon.gltf", function (gltf) {
       customModel = gltf.scene;
-      customModel.visible = false;
+      
 
       // Scale of model
       customModel.scale.multiplyScalar(8);
