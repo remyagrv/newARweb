@@ -87,12 +87,7 @@ async function activateXR() {
   session.addEventListener("select", () => {
     loader.load("models/Demon/Demon.gltf", function (gltf) {
       customModel = gltf.scene;
-      if (customModel.length > MAX_FLOWERS) {
-       
-        let oldFlower = customModel.shift();
-        
-        scene.removeNode(oldFlower);
-      }
+     
 
       // Scale of model
       customModel.scale.multiplyScalar(8);
