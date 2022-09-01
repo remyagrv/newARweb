@@ -84,7 +84,7 @@ async function activateXR() {
   let customModel;
   // Eventlistener that will wait for a 'tap' of the user. When tapped, custom model loads with animation and get placed on marker location
   session.addEventListener("select", () => {
-    loader.load("models/Demon/Demon.gltf", function (gltf) {
+    loader.load("models/Demon/man.gltf", function (gltf) {
       customModel = gltf.scene;
 
       // Scale of model
