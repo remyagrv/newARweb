@@ -97,12 +97,12 @@ loader.load("models/Demon/Demon.gltf", function(gltf) {
 session.addEventListener("select", (event) => {
   if (customModel) {
     const clone = customModel.clone();
-    customModel.scale.multiplyScalar(8);
-    customModel.position.copy(marker.position);
-    customModel.scale.multiplyScalar(8);
+    clone.scale.multiplyScalar(8);
+    clone.position.copy(marker.position);
+    
      //if model is animated. play animation
      const animation = gltf.animations[0];
-     const mixer = new THREE.AnimationMixer(customModel);
+     const mixer = new THREE.AnimationMixer(clone);
      mixers.push(mixer);
 
      const action = mixer.clipAction(animation);
