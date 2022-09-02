@@ -73,7 +73,7 @@ CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
         // arObject.addNode(title);
 
         // let flower = new Gltf2Node({ url: 'media/gltf/sunflower/sunflower.gltf' });
-        let flower = new Gltf2Node({ url: 'media/gltf/hitman/hitnw.gltf' });
+        let flower = new Gltf2Node({ url: 'media/gltf/robo/robo.gltf' });
         arObject.addNode(flower);
 
         let reticle = new Gltf2Node({ url: 'media/gltf/reticle/reticle.gltf' });
@@ -82,9 +82,9 @@ CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
         // Having a really simple drop shadow underneath an object helps ground
         // it in the world without adding much complexity.
-        let shadow = new DropShadowNode();
-        vec3.set(shadow.scale, 4.3, 3.9, 3.7);
-        arObject.addNode(shadow);
+        // let shadow = new DropShadowNode();
+        // vec3.set(shadow.scale, 4.3, 3.9, 3.7);
+        // arObject.addNode(shadow);
 
         const MAX_FLOWERS = 1;
         let flowers = [];
