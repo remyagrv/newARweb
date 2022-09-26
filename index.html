@@ -40,11 +40,15 @@
       src="./victoryrobo.glb"
       ios-src="./victoryrobo.usdz"
       ar
-      ar-modes="scene-viewer webxr"
+      poster="./circle.svg"
+      ar-modes="scene-viewer webxr quick-look"
       camera-controls
       shadow-intensity="1.02"
               autoplay
       touch-action="pan-y"
+      min-camera-orbit="auto auto 0.2978m"
+      min-field-of-view="30deg"
+      camera-target="0.02m 0.07m 0.02202m"
       alt="A 3D model of an astronaut"
     >
       <div id="error" class="hide"></div>
