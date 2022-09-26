@@ -10,17 +10,18 @@
   <script src="https://unpkg.com/fullscreen-polyfill@1.0.2/dist/fullscreen.polyfill.js"></script>
   <link rel=“stylesheet” type=“text/css” href=“model.css” />
   <script>
-    document.querySelector("#model-viewer").addEventListener('ar-status', (event) => {
-      if(event.detail.status === 'failed'){
-        const error = document.querySelector("#error");
-        error.classList.remove('hide');
-        error.addEventListener('transitionend',(event) => {
-          error.classList.add('hide');
-        });
-      }
-    });
+    document
+      .querySelector("#model-viewer")
+      .addEventListener("ar-status", (event) => {
+        if (event.detail.status === "failed") {
+          const error = document.querySelector("#error");
+          error.classList.remove("hide");
+          error.addEventListener("transitionend", (event) => {
+            error.classList.add("hide");
+          });
+        }
+      });
   </script>
- 
 </head>
 <body>
   <div class="model">
@@ -34,9 +35,19 @@
       ios-src="https://dl.dropbox.com/s/d4dneta9o2c0021/Covid-19.usdz"
       xr-environment
     ></model-viewer> -->
-    <model-viewer id="model-viewer" src="https://dl.dropbox.com/s/d8l8yj3es9q3hgg/Covid-19.glb" ios-src="https://dl.dropbox.com/s/d4dneta9o2c0021/Covid-19.usdz" ar ar-modes="scene-viewer webxr" camera-controls touch-action="pan-y" alt="A 3D model of an astronaut" >
-      <div id="error" class="hide">AR is not supported on this device</div>
+    <model-viewer
+      id="model-viewer"
+      src="./victoryrobo.glb"
+      ios-src="./victoryrobo.usdz"
+      ar
+      ar-modes="scene-viewer webxr"
+      camera-controls
+      shadow-intensity="1.02"
+              autoplay
+      touch-action="pan-y"
+      alt="A 3D model of an astronaut"
+    >
+      <div id="error" class="hide"></div>
     </model-viewer>
-   
   </div>
 </body>
