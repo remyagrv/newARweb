@@ -133,3 +133,9 @@
     visibility: hidden;
     transition: visibility 2s, opacity 1s 1s;
   }
+  #model-viewer{
+    width: 1000px;
+  }
+  .model{
+    height: 100%;
+  }
